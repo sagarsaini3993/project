@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Profile</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Tynder</title>
   </head>
   <body>
 
     <div data-role="page">
 
       <div data-role="header">
+       
         <h1>Profile</h1>
-      </div><!-- /header -->
+      
+      </div>
+      <!-- /header -->
+       <a href="profilepic.html">
+      <img id="photoContainer" style="border:3px solid red;max-height: 40%; max-width:70%;border-radius: 50%;">
+      </a>
+    
+
 
 
       Description
+      <span id="resultsSection"></span>
 
-      <textarea cols="40" rows="8" name="textarea-18" id="textarea-18" placeholder="Description"></textarea>
+      <input type="submit" id="edit" value="Edit Profile" >
 
 
       <!-- Photo.  User can either:
@@ -32,6 +48,8 @@
 
 
   </div>
+   <script type="text/javascript" src="cordova.js"></script>
+         <script type="text/javascript" src="js/profile.js"></script>
 
   </body>
 </html>
