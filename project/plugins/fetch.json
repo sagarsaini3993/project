@@ -15,10 +15,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-websql": {
+  "cordova-sqlite-storage": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-websql"
+      "id": "cordova-sqlite-storage"
     },
     "is_top_level": true,
     "variables": {}
