@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Signup</title>
-
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script> -->
-
-
-    <link href="style.css" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!-- 
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+        <title>Tynder</title>
   </head>
   <body>
 
@@ -22,20 +21,19 @@
     		<h1>New User</h1>
     	</div><!-- /header -->
 
-
-      <form method="get" action="index.html">
+  <div style="max-width:70%; margin:3% auto;">
+      <form action="index.html" method="get">
           <input type="email" data-clear-btn="true" name="email-2" id="email" value=""placeholder="Email">
           <input type="password" data-clear-btn="true" name="password-2" id="password" value="" autocomplete="off" placeholder="password">
           <input type="text" data-clear-btn="true" name="text-3" id="name" value="" placeholder="Name">
           <input type="text" data-role="date" id="dob" placeholder="mm/dd/yyyy">
           <input type="search" name="search-5" id="location" value="" placeholder="Location">
-          <input type="submit" value="Signup">
+          <input type="submit"  id="signup" value="Signup">
         </form>
 
     </div>
-
-
-
-  <script type="text/javascript" src="js/index.js"></script>
+  </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
   </body>
 </html>

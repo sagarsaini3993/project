@@ -1,21 +1,26 @@
 //------initiate database---------//
 document.addEventListener("deviceReady", connectToDatabase);
-document.getElementById("login").addEventListener("click", loginButton);
+document.getElementById("signup").addEventListener("click", signupButton);
 var inputName = 0;
 var inputPassword = 0;
+var inputMail = 0;
+var inputDOB  = 0;
+var inputLocation = 0;
 var db = null;
-
-function loginButton() {
+function signupButton() {
     //alert("login pressed");
-    inputName = document.getElementById("email").value;
+    inputMail = document.getElementById("email").value;
     inputPassword = document.getElementById("password").value;
-    alert(inputName + inputPassword);
+    inputName = document.getElementById("name").value;
+    inputDOB = document.getElementById("dob").value;
+    inputLocation = document.getElementById("location").value;
+    alert(inputName ,inputPassword, inputName, inputDOB,inputLocation);
     db.transaction(
       function(tx){
         
           tx.executeSql(
-            "SELECT * FROM user where email = ? AND password = ?",
-            [inputName,inputPassword],
+            "SELECT email FROM user where email = ?",
+            [inputMail],
             displayResults,
             onError
           )
@@ -26,23 +31,15 @@ function loginButton() {
   }
   function displayResults( tx, results ){
     if(results.rows.length == 0) {
-            alert("Please enter valid username and password");
+           alert("new user")
+            insertUser();
             window.location.replace("index.html"); 
-            return false;
+      }
+      else{
+         alert("Email already exist");
+
       }
  
-      var row = "";
-      for(var i=0; i<results.rows.length; i++) {
-      name = results.rows.item(i).email;
-     
-      password = results.rows.item(i).password;
-      alert(name + password);
-
-      localStorage.setItem("mail", name);
-      localStorage.setItem("password", password);
-      localStorage.setItem("userEntry", 1);
-      window.location.replace("profile.html"); 
-    }
   }
 
   function onReadyTransaction(){
@@ -50,7 +47,6 @@ function loginButton() {
   }
   function onSuccessExecuteSql( tx, results ){
     console.log( 'Execute SQL completed' );
-    localStorage.setItem("userEntry", 1);
   }
   function onError( err ){
     console.log( err )
@@ -86,7 +82,7 @@ db.transaction(
             tx.executeSql(
                 "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, password TEXT, name TEXT, birthdate TEXT, location TEXT)",
                 [],
-                insertUser,
+                onSuccessExecuteSql,
                 onError
             )
         },
@@ -96,13 +92,11 @@ db.transaction(
 
 }
 function insertUser(){
-  if (localStorage.getItem("userEntry") != 1){
-    alert(localStorage.getItem("userEntry"));
   db.transaction(
         function(tx){
             tx.executeSql(
-                "INSERT INTO user(email, password, name, birthdate, location) VALUES('sagar@gmail.com','sagar11', 'sagar','1/1/1994','toronto'),('sukh@gmail.com','sukh11', 'sukhwinder','2/2/1994','brampton'),('raman@gmail.com','raman11', 'raman','3/3/1994','toronto')",
-                [],
+                "INSERT INTO user(email, password, name, birthdate, location)  VALUES(?,?,?,?,?)",
+                [inputMail, inputPassword,inputName, inputDOB,inputLocation],
                 onSuccessExecuteSql,
                 onError
             )
@@ -110,7 +104,7 @@ function insertUser(){
         onError,
         onReadyTransaction
     )
- }
+
 }
 
 
