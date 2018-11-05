@@ -35,7 +35,7 @@ function displayResults( tx, results ){
         + "description: "
         +   results.rows.item(i).email
         + "<br>"
-        + "Date of Birth: "
+        + "Password: "
         +   results.rows.item(i).password
         + "<br>"
         + "Location: "
