@@ -41,11 +41,11 @@ function loginButton() {
       localStorage.setItem("mail", name);
       localStorage.setItem("password", password);
       localStorage.setItem("userEntry", 1);
-<<<<<<< HEAD
-      window.location.replace("home.html"); 
-=======
+// <<<<<<< HEAD
+      // window.location.replace("home.html"); 
+// =======
       window.location.replace("profile.html");
->>>>>>> 2aca83a9f076b1e906d4ff44360c8ca283e2fd66
+// >>>>>>> 2aca83a9f076b1e906d4ff44360c8ca283e2fd66
     }
   }
 
@@ -88,7 +88,7 @@ function connectToDatabase() {
 db.transaction(
         function(tx){
             tx.executeSql(
-                "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, password TEXT, name TEXT, birthdate TEXT, location TEXT)",
+                "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, password TEXT, name TEXT, birthdate TEXT, location TEXT, description TEXT)",
                 [],
                 insertUser,
                 onError

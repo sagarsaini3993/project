@@ -19,25 +19,33 @@
     <div data-role="page">
 
       <div data-role="header">
-        <h1>New User</h1>
+        <span id="userid"></span>
       </div><!-- /header -->
 
-    Description
-    <input type="text" data-clear-btn="true" name="text-3" id="description" value="" placeholder="Description">
-    Photo.  User can either:
+   
+    select your profile picture
 
-    Choose an existing photo from their phone’s gallery
-    <input type="file" data-clear-btn="true" name="file-2" id="pickPhotoButton" value="">
-    Take a photo with their camera
-    <input type="button" id="takePhotoButton" value="cam">
-    Change their name
+    <!-- Choose an existing photo from their phone’s gallery -->
+    <input type="button" data-clear-btn="true" name="file-2" id="pickPhotoButton" value="gallery">
+    <!-- Take a photo with their camera -->
+    <input type="button" id="takePhotoButton" value="Take Photo">
+    <!-- Change their name -->
     <input type="text" data-clear-btn="true" name="text-3" id="name" value="" placeholder="Name">
 
-    Change their location
+    <!-- Change their location -->
     <input type="text" data-clear-btn="true" name="text-3" id="location" value="" placeholder="Location">
 
-</div>
+<!-- Change their location -->
+    <input type="text" data-clear-btn="true" name="text-3" id="description" value="" placeholder="change your description">
 
-    <script src="js/edit.js"></script>
+
+    <!-- raman -->
+
+      <input type="submit" id="update" value="Update Profile" >
+
+</div>
+ <script type="text/javascript"  src="cordova.js"></script>
+
+    <script type="text/javascript" src="js/edit.js"></script>
   </body>
 </html>

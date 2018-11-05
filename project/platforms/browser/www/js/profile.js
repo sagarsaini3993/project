@@ -14,7 +14,7 @@ function editButton() {
   }
   
 function displayResults( tx, results ){
- 
+  document.getElementById("resultsSection").innerHTML ="";
     if(results.rows.length == 0) {
             alert("No records found");
             return false;
@@ -31,6 +31,9 @@ function displayResults( tx, results ){
         + "<br>"
         + "Location: "
         +   results.rows.item(i).location
+          + "<br>"
+        + "description: "
+        +   results.rows.item(i).description
         + "</p>";
      
         }
@@ -75,31 +78,15 @@ function connectToDatabase() {
 db.transaction(
         function(tx){
             tx.executeSql(
-                "CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, password TEXT, name TEXT, birthdate TEXT, location TEXT)",
-                [],
-                insertUser,
-                onError
+                 "SELECT * FROM user where email = ?",
+            [mail],
+            displayResults,
+            onError
             )
         },
         onError,
         onReadyTransaction
     )
-
-}
-function insertUser(){
- db.transaction(
-      function(tx){
-        
-          tx.executeSql(
-            "SELECT * FROM user where email = ?",
-            [mail],
-            displayResults,
-            onError
-          )
-      },
-      onError,
-      onReadyTransaction
-    ) 
 
 }
 
