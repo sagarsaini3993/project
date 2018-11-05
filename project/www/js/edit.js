@@ -124,9 +124,14 @@ db.transaction(
 function onReadyTransaction(){
     console.log( 'Transaction completed' )
   }
-  function onSuccessExecuteSql(filename ){
+  function onSuccessExecuteSql( tx, results ){
     console.log( 'Execute SQL completed' );
+  }
+  function onSuccess(filename)
+  {
+
     // DEBUG: Show the original file name
+  
   console.log("Image path: "  + filename);
   alert("Image path: "  + filename);
 
@@ -168,3 +173,10 @@ function onReadyTransaction(){
     alert("table does not exist");
     console.log( err )
   }
+
+  function onFail(errorMessage){
+    console.log("Error Message:" + errorMessage);
+    alert("Error Message:" + errorMessage);
+
+
+}
