@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Edit profile</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+       <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  </head>
+  <body>
+
+
+    <div data-role="page">
+
+      <div data-role="header">
+        <h1>New User</h1>
+      </div><!-- /header -->
+
+    Description
+    <input type="text" data-clear-btn="true" name="text-3" id="description" value="" placeholder="Description">
+    Photo.  User can either:
+
+    Choose an existing photo from their phone’s gallery
+    <input type="file" data-clear-btn="true" name="file-2" id="pickPhotoButton" value="">
+    Take a photo with their camera
+    <input type="button" id="takePhotoButton" value="cam">
+    Change their name
+    <input type="text" data-clear-btn="true" name="text-3" id="name" value="" placeholder="Name">
+
+    Change their location
+    <input type="text" data-clear-btn="true" name="text-3" id="location" value="" placeholder="Location">
+
+</div>
+
+    <script src="js/edit.js"></script>
+  </body>
+</html>

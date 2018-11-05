@@ -1,23 +1,39 @@
 //------initiate database---------//
 document.addEventListener("deviceReady", connectToDatabase);
 document.getElementById("signup").addEventListener("click", signupButton);
-var inputName = 0;
-var inputPassword = 0;
-var inputMail = 0;
-var inputDOB  = 0;
-var inputLocation = 0;
-var db = null;
+document.getElementById("refresh").addEventListener("click",refreshPage);
+
+function refreshPage() {
+  window.location.reload(true);
+}
+
+var inputName = "";
+var inputPassword = "";
+var inputMail = "";
+var inputDOB  = "";
+var inputLocation = "";
+var db = "";
+
 function signupButton() {
-    //alert("login pressed");
+    alert("login pressed");
     inputMail = document.getElementById("email").value;
     inputPassword = document.getElementById("password").value;
     inputName = document.getElementById("name").value;
     inputDOB = document.getElementById("dob").value;
     inputLocation = document.getElementById("location").value;
-    alert(inputName ,inputPassword, inputName, inputDOB,inputLocation);
+alert(inputMail);
+alert(inputPassword);
+alert(inputName);
+alert(inputDOB);
+alert(inputLocation);
+    // alert(inputName ,inputPassword, inputName, inputDOB,inputLocation);
+
+
+
+
     db.transaction(
       function(tx){
-        
+
           tx.executeSql(
             "SELECT email FROM user where email = ?",
             [inputMail],
@@ -27,19 +43,28 @@ function signupButton() {
       },
       onError,
       onReadyTransaction
-    ) 
+    )
   }
+
   function displayResults( tx, results ){
     if(results.rows.length == 0) {
            alert("new user")
             insertUser();
-            window.location.replace("index.html"); 
+            window.location.replace("index.html");
       }
-      else{
-         alert("Email already exist");
+      // else{
+      //    alert("Email already exist");
+      //
+      // }
 
+      for(var i=0; i<results.rows.length; i++) {
+        if(results.rows.item(i).email == inputMail) {
+          alert("email already exist");
+        } else {
+          insertUser();
+        }
       }
- 
+
   }
 
   function onReadyTransaction(){
@@ -53,8 +78,9 @@ function signupButton() {
   }
 
 function connectToDatabase() {
+
   console.log("device is ready - connecting to database");
- 
+
 
   // 2. open the database. The code is depends on your platform!
   if (window.cordova.platformId === 'browser') {
@@ -92,6 +118,7 @@ db.transaction(
 
 }
 function insertUser(){
+  alert("inserting user");
   db.transaction(
         function(tx){
             tx.executeSql(
@@ -106,5 +133,3 @@ function insertUser(){
     )
 
 }
-
-
