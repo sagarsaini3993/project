@@ -21,11 +21,12 @@ function signupButton() {
     inputName = document.getElementById("name").value;
     inputDOB = document.getElementById("dob").value;
     inputLocation = document.getElementById("location").value;
+    inputDescription = document.getElementById("description").value;
 alert(inputMail);
-alert(inputPassword);
-alert(inputName);
-alert(inputDOB);
-alert(inputLocation);
+// alert(inputPassword);
+// alert(inputName);
+// alert(inputDOB);
+// alert(inputLocation);
     // alert(inputName ,inputPassword, inputName, inputDOB,inputLocation);
 
 
@@ -122,8 +123,8 @@ function insertUser(){
   db.transaction(
         function(tx){
             tx.executeSql(
-                "INSERT INTO user(email, password, name, birthdate, location)  VALUES(?,?,?,?,?)",
-                [inputMail, inputPassword,inputName, inputDOB,inputLocation],
+                "INSERT INTO user(email, password, name, birthdate, location, description)  VALUES(?,?,?,?,?,?)",
+                [inputMail, inputPassword,inputName, inputDOB,inputLocation,inputDescription],
                 onSuccessExecuteSql,
                 onError
             )
