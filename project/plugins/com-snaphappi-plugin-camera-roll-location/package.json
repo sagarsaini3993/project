@@ -1,0 +1,64 @@
+{
+  "_from": "cordova-plugin-camera-roll-location",
+  "_id": "cordova-plugin-camera-roll-location@0.3.3",
+  "_inBundle": false,
+  "_integrity": "sha1-cJCKK9WQVJ6+r8QWvd0a0/iqWyI=",
+  "_location": "/cordova-plugin-camera-roll-location",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-camera-roll-location",
+    "name": "cordova-plugin-camera-roll-location",
+    "escapedName": "cordova-plugin-camera-roll-location",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-camera-roll-location/-/cordova-plugin-camera-roll-location-0.3.3.tgz",
+  "_shasum": "70908a2bd590549ebeafc416bddd1ad3f8aa5b22",
+  "_spec": "cordova-plugin-camera-roll-location",
+  "_where": "C:\\Users\\htc\\Desktop\\project\\project",
+  "author": {
+    "name": "Michael Lin"
+  },
+  "bugs": {
+    "url": "https://github.com/mixersoft/cordova-plugin-camera-roll-location/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com-snaphappi-plugin-camera-roll-location",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "get location metadata with photos from CameraRoll",
+  "engines": {
+    "cordovaDependencies": {
+      "0.1.0": {
+        "cordova": "6.3.1",
+        "cordova-plugin-add-swift-support": ">1.3.2"
+      }
+    }
+  },
+  "homepage": "https://github.com/mixersoft/cordova-plugin-camera-roll-location#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "camera",
+    "location",
+    "gps"
+  ],
+  "license": "Apache License 2.0",
+  "name": "cordova-plugin-camera-roll-location",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixersoft/cordova-plugin-camera-roll-location.git"
+  },
+  "version": "0.3.3"
+}

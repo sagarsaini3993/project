@@ -30,5 +30,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com-snaphappi-plugin-camera-roll-location": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera-roll-location"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

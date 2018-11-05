@@ -18,6 +18,9 @@
     },
     "cordova-plugin-filepath": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "com-snaphappi-plugin-camera-roll-location": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {}

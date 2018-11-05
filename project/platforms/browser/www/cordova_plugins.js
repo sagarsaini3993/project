@@ -37,6 +37,15 @@ module.exports = [
         "clobbers": [
             "SQLitePlugin"
         ]
+    },
+    {
+        "file": "plugins/com-snaphappi-plugin-camera-roll-location/www/CameraRollLocation.js",
+        "id": "com-snaphappi-plugin-camera-roll-location.CameraRollLocation",
+        "pluginId": "com-snaphappi-plugin-camera-roll-location",
+        "clobbers": [
+            "cordova.plugins.CameraRollLocation",
+            "snappi_CameraRollLocation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -45,7 +54,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-camera": "4.0.3",
     "cordova-sqlite-evcore-extbuild-free": "0.9.9-rc1",
-    "cordova-plugin-filepath": "1.4.2"
+    "cordova-plugin-filepath": "1.4.2",
+    "com-snaphappi-plugin-camera-roll-location": "0.1.0"
 }
 // BOTTOM OF METADATA
 });
