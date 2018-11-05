@@ -41,7 +41,7 @@ function loginButton() {
       localStorage.setItem("mail", name);
       localStorage.setItem("password", password);
       localStorage.setItem("userEntry", 1);
-      window.location.replace("profile.html"); 
+      window.location.replace("home.html"); 
     }
   }
 

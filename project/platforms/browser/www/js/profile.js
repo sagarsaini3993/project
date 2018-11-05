@@ -1,6 +1,6 @@
 //------initiate database---------//
 document.addEventListener("deviceReady", connectToDatabase);
-document.getElementById("edit").addEventListener("click", signupButton);
+document.getElementById("edit").addEventListener("click", editButton);
 var inputName = 0;
 var inputPassword = 0;
 var inputMail = 0;
@@ -8,27 +8,9 @@ var inputDOB  = 0;
 var inputLocation = 0;
 var db = null;
 var mail = localStorage.getItem("mail");
-function signupButton() {
+function editButton() {
     //alert("login pressed");
-    inputMail = document.getElementById("email").value;
-    inputPassword = document.getElementById("password").value;
-    inputName = document.getElementById("name").value;
-    inputDOB = document.getElementById("dob").value;
-    inputLocation = document.getElementById("location").value;
-    alert(inputName ,inputPassword, inputName, inputDOB,inputLocation);
-    db.transaction(
-      function(tx){
-        
-          tx.executeSql(
-            "SELECT email FROM user where email = ?",
-            [mail],
-            displayResults,
-            onError
-          )
-      },
-      onError,
-      onReadyTransaction
-    ) 
+    window.location.replace("edit.html"); 
   }
   
 function displayResults( tx, results ){
@@ -45,7 +27,7 @@ function displayResults( tx, results ){
         +   results.rows.item(i).name
         + "<br>"
         + "Date of Birth: "
-        +   results.rows.item(i).dob
+        +   results.rows.item(i).birthdate
         + "<br>"
         + "Location: "
         +   results.rows.item(i).location
