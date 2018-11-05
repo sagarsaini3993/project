@@ -32,11 +32,14 @@ function displayResults( tx, results ){
         + "Location: "
         +   results.rows.item(i).location
           + "<br>"
-        + "email: "
+        + "Email: "
         +   results.rows.item(i).email
         + "<br>"
         + "Password: "
         +   results.rows.item(i).password
+        + "<br>"
+         + "Description: "
+        +   results.rows.item(i).description
         + "<br>"
        + "<br>"
         + "</p>";

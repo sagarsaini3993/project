@@ -26,7 +26,6 @@ function displayResults( tx, results ){
           document.getElementById("name").value = results.rows.item(i).name;
           document.getElementById("location").value = results.rows.item(i).location;
           document.getElementById("description").value = results.rows.item(i).description;
-          document.getElementById("email").value = results.rows.item(i).email;
           document.getElementById("password").value = results.rows.item(i).password;
           document.getElementById("dob").value = results.rows.item(i).birthdate;
         }
@@ -92,7 +91,6 @@ alert("update button clicked");
 var name= document.getElementById("name").value;
 var location= document.getElementById("location").value;
 var description= document.getElementById("description").value;
-var email= document.getElementById("email").value;
 var password= document.getElementById("password").value;
 var dob= document.getElementById("dob").value;
 console.log(name);
@@ -103,8 +101,8 @@ db.transaction(
 
         function(tx){
           tx.executeSql(
-             "UPDATE user set name=?, location=?, description=?, email=?, password=?, birthdate=? where email = ?",
-            [name,location,description,email,password,dob,mail],
+             "UPDATE user set name=?, location=?, description=?, password=?, birthdate=? where email = ?",
+            [name,location,description,password,dob,mail],
             onSuccessExecuteSql,
             onError
              )
