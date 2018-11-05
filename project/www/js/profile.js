@@ -38,9 +38,7 @@ function displayResults( tx, results ){
         + "Password: "
         +   results.rows.item(i).password
         + "<br>"
-        + "Location: "
-        +   results.rows.item(i).birthdate
-          + "<br>"
+         + "<br>"
         + "</p>";
      
         }
