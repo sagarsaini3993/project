@@ -1,10 +1,4 @@
 //------initiate database---------//
-
-jQuery.mobile.changePage(window.location.href, {
-        allowSamePageTransition: true,
-        transition: 'none',
-        reloadPage: true
-    });
 document.addEventListener("deviceReady", connectToDatabase);
 document.getElementById("login").addEventListener("click", loginButton);
 var inputName = 0;
@@ -33,7 +27,7 @@ function loginButton() {
   function displayResults( tx, results ){
     if(results.rows.length == 0) {
             alert("Please enter valid username and password");
-            window.location("index.html");
+            window.location.replace("index.html");
             return false;
       }
 
@@ -47,7 +41,7 @@ function loginButton() {
       localStorage.setItem("mail", name);
       localStorage.setItem("password", password);
       localStorage.setItem("userEntry", 1);
-      window.location("profile.html");
+      window.location.replace("profile.html");
     }
   }
 
