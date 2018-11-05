@@ -32,15 +32,13 @@ function displayResults( tx, results ){
         + "Location: "
         +   results.rows.item(i).location
           + "<br>"
-        + "description: "
+        + "email: "
         +   results.rows.item(i).email
         + "<br>"
-        + "Date of Birth: "
+        + "Password: "
         +   results.rows.item(i).password
         + "<br>"
-        + "Location: "
-        +   results.rows.item(i).birthdate
-          + "<br>"
+       + "<br>"
         + "</p>";
      
         }

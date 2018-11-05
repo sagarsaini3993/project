@@ -105,7 +105,7 @@ function insertUser(){
   db.transaction(
         function(tx){
             tx.executeSql(
-                "INSERT INTO user(email, password, name, birthdate, location) VALUES('sagar@gmail.com','sagar11', 'sagar','1/1/1994','toronto'),('sukh@gmail.com','sukh11', 'sukhwinder','2/2/1994','brampton'),('raman@gmail.com','raman11', 'raman','3/3/1994','toronto')",
+                "INSERT INTO user(email, password, name, birthdate, location, description) VALUES('sagar@gmail.com','sagar11', 'sagar','1/1/1994','toronto','lambton college'),('sukh@gmail.com','sukh11', 'sukhwinder','2/2/1994','brampton','ww'),('raman@gmail.com','raman11', 'raman','3/3/1994','toronto','e')",
                 [],
                 onSuccessExecuteSql,
                 onError
