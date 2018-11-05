@@ -27,7 +27,7 @@ function loginButton() {
   function displayResults( tx, results ){
     if(results.rows.length == 0) {
             alert("Please enter valid username and password");
-            window.location.replace("index.html");
+            window.location("index.html");
             return false;
       }
 
@@ -41,7 +41,7 @@ function loginButton() {
       localStorage.setItem("mail", name);
       localStorage.setItem("password", password);
       localStorage.setItem("userEntry", 1);
-      window.location.replace("profile.html");
+      window.location("profile.html");
     }
   }
 

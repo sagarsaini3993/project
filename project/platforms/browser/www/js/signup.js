@@ -1,6 +1,12 @@
 //------initiate database---------//
 document.addEventListener("deviceReady", connectToDatabase);
 document.getElementById("signup").addEventListener("click", signupButton);
+document.getElementById("refresh").addEventListener("click",refreshPage);
+
+function refreshPage() {
+  window.location.reload(true);
+}
+
 var inputName = "";
 var inputPassword = "";
 var inputMail = "";
@@ -72,6 +78,7 @@ alert(inputLocation);
   }
 
 function connectToDatabase() {
+
   console.log("device is ready - connecting to database");
 
 
