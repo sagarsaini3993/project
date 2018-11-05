@@ -35,6 +35,7 @@ function displayResults( tx, results ){
     }
 
 
+
 function connectToDatabase() {
   console.log("device is ready - connecting to database");
  
@@ -119,12 +120,11 @@ db.transaction(
    navigator.camera.getPicture(onSuccess, onFail, cameraOptions);
 }
 
-
-//==================functions===========================
- function onReadyTransaction(){
+//=====================
+function onReadyTransaction(){
     console.log( 'Transaction completed' )
   }
-  function onSuccessExecuteSql( tx, results ){
+  function onSuccessExecuteSql(filename ){
     console.log( 'Execute SQL completed' );
     // DEBUG: Show the original file name
   console.log("Image path: "  + filename);
@@ -160,7 +160,9 @@ db.transaction(
 
     // DEBUG STATEMENT
     alert(localStorage);
-
+ }
+ // 
+    
   }
   function onError( err ){
     alert("table does not exist");

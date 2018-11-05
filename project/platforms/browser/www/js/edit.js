@@ -34,51 +34,7 @@ function displayResults( tx, results ){
  
     }
 
-  function onReadyTransaction(){
-    console.log( 'Transaction completed' )
-  }
-  function onSuccessExecuteSql( tx, results ){
-    console.log( 'Execute SQL completed' );
-    // DEBUG: Show the original file name
-  console.log("Image path: "  + filename);
-  alert("Image path: "  + filename);
 
-  // ---------
-  if (window.cordova.platformId == "android") {
-    // if you are using android, you need to do some extra steps
-    // to ensure you have the "real" image file path
-    // Note: you need to install this plugin: cordova-plugin-filepath
-    // for it to work properly
-    window.FilePath.resolveNativePath(filename, function(result) {
-      imageURI = result;
-      alert("Successfully converted image path: " + result);
-
-      localStorage.setItem("photo", result);
-
-      var image = document.getElementById("photoContainer");
-      image.src = result;
-
-    }, function (error) {
-      alert("error when converting file path!");
-    });
-  }
-  else {
-    // show image in UI
-    // show the image in the user interface
-    var imageBox = document.getElementById("photoContainer");
-    imageBox.src=filename;
-
-    // adding it to local storage
-    localStorage.setItem("photo", filename);
-
-    // DEBUG STATEMENT
-    alert(localStorage);
-
-  }
-  function onError( err ){
-    alert("table does not exist");
-    console.log( err )
-  }
 
 function connectToDatabase() {
   console.log("device is ready - connecting to database");
@@ -164,3 +120,51 @@ db.transaction(
    navigator.camera.getPicture(onSuccess, onFail, cameraOptions);
 }
 
+//=====================
+function onReadyTransaction(){
+    console.log( 'Transaction completed' )
+  }
+  function onSuccessExecuteSql(filename ){
+    console.log( 'Execute SQL completed' );
+    // DEBUG: Show the original file name
+  console.log("Image path: "  + filename);
+  alert("Image path: "  + filename);
+
+  // ---------
+  if (window.cordova.platformId == "android") {
+    // if you are using android, you need to do some extra steps
+    // to ensure you have the "real" image file path
+    // Note: you need to install this plugin: cordova-plugin-filepath
+    // for it to work properly
+    window.FilePath.resolveNativePath(filename, function(result) {
+      imageURI = result;
+      alert("Successfully converted image path: " + result);
+
+      localStorage.setItem("photo", result);
+
+      var image = document.getElementById("photoContainer");
+      image.src = result;
+
+    }, function (error) {
+      alert("error when converting file path!");
+    });
+  }
+  else {
+    // show image in UI
+    // show the image in the user interface
+    var imageBox = document.getElementById("photoContainer");
+    imageBox.src=filename;
+
+    // adding it to local storage
+    localStorage.setItem("photo", filename);
+
+    // DEBUG STATEMENT
+    alert(localStorage);
+ }
+ // 
+    
+  }
+  function onError( err ){
+    alert("table does not exist");
+    console.log( err )
+  }
